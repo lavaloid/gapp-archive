@@ -14,7 +14,7 @@ vols_with_notes = [7, 10, 15, 21]
 
 
 def generate_row(year: int, month: int, idx: int):
-    _, days_in_month = monthrange(2022, month)
+    _, days_in_month = monthrange(year, month)
 
     start_date = f"{year}-{month:02}-01" if idx > 0 else "2021-10-27"
     end_date = f"{year}-{month:02}-{days_in_month}"
