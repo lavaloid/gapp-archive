@@ -1,0 +1,133 @@
+:root {
+  --table-rainbow-lightness: 92%;
+  --highlighted-anchor: #fffbca;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --table-rainbow-lightness: 10%;
+    --highlighted-anchor: #3c3509;
+  }
+}
+
+img.twemoji {
+  height: 1em;
+  transform: translateY(0.2em);
+}
+
+abbr,
+dfn {
+  font-style: italic;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title h1 {
+  margin: 0;
+}
+
+h2.title-bar-text {
+  font-size: 1rem;
+}
+
+.title p {
+  display: block;
+  text-align: center;
+  margin: auto 0.2em;
+}
+
+.title img {
+  max-width: 100vw;
+}
+
+#mtg li:target {
+  background-color: var(--highlighted-anchor);
+}
+
+/* mtg table formatting */
+
+table {
+  width: 100%;
+  font: inherit;
+  overflow-x: auto;
+}
+
+thead th {
+  text-align: center;
+}
+
+#mtg table td:nth-child(3),
+#mtg table td:nth-child(4) {
+  text-align: center;
+}
+
+tbody tr {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+tbody tr:nth-child(2n) {
+  --hover-color: #eeeeff;
+}
+tbody tr:nth-child(2n + 1) {
+  --hover-color: #f3f3ff;
+}
+@media (prefers-color-scheme: dark) {
+  tbody tr:nth-child(2n) {
+    --hover-color: #404040;
+  }
+  tbody tr:nth-child(2n + 1) {
+    --hover-color: #333333;
+  }
+}
+#mtg tbody tr:hover,
+#mtg tbody tr:focus-within {
+  background-color: var(--hover-color);
+}
+
+table time {
+  font-family: var(--mono-font);
+}
+
+/* timeline formatting */
+
+.visually-hidden {
+  position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.tl-label {
+  border-radius: 999px;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  background-color: #666666;
+}
+
+#tl-legend dl {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#tl-legend dl div {
+  display: flex;
+  gap: 0.25rem;
+}
+
+#tl-legend dl dd {
+  margin-left: 0;
+}
